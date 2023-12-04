@@ -1,25 +1,20 @@
 public class BareHand extends Weapon implements WeaponI{
-    public BareHand(){}
-
-    @Override
-    public String getName() {
-        return null;
-    }
-
-    @Override
-    public void statsDisplay() {
-
-    }
-
-    @Override
-    public int getLevel() {
-        return 0;
+    public BareHand(){
+        super("Bare Hand",0);
     }
 
     @Override
     public void upLevel() {
 
     }
+
+    @Override
+    public void updateStats() {
+        str = 1;
+        dex = 1;
+        def = 0;
+    }
+
     public int getStr(){
         return 0;
     }
@@ -27,4 +22,5 @@ public class BareHand extends Weapon implements WeaponI{
     public int getStats() {
         return 0;
     }
+
 }

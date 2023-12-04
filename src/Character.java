@@ -12,8 +12,6 @@ public abstract class Character {
         alive = true;
         updateStats();
     }
-    public Character(String name){this(name,1);}
-
     //getter
     //methods
     public void attack(Character target){
@@ -44,4 +42,5 @@ public abstract class Character {
         updateStats();
     }
     public void upLevel(){upLevel(1);}
+    public abstract void mainHandStats();
 }

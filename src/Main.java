@@ -4,6 +4,8 @@ public class Main {
     public static void main(String[] args) {
         Sword rustySword = new Sword("Rusty sword",4);
         Knight a1 = new Knight("marl",5, rustySword);
+        Knight a2 = new Knight("marl",5, rustySword);
         a1.mainHandStats();
+        a1.attack(a2);
     }
 }

@@ -8,8 +8,5 @@ public class Melee extends Weapon implements  MeleeI{
         dex = (int)(0.5*level);
         def = (int)(0.6*level+4);
     }
-    @Override
-    public int getStats() {
-        return 0;
-    }
+    public int getStr(){return str;}
 }

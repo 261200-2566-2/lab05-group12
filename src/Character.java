@@ -15,11 +15,12 @@ public abstract class Character {
     //getter
     //methods
     public void attack(Character target){
+        System.out.println("Damage "+calculateDmg());
         target.beingAttack(calculateDmg());
     }
     protected abstract int calculateDmg();
     protected void beingAttack(int dmg){
-
+        health-=dmg;//to be fixed
     }
     public abstract void updateStats();
     protected void baseStatsUpdate(){

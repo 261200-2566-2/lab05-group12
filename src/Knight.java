@@ -12,15 +12,9 @@ public class Knight extends MeleeCharacter implements MeleeCharacterI{
     public Knight(String name) {
         this(name,1);
     }
-
-    @Override
-    public void attack(Character target) {
-
-    }
-
     @Override
     protected int calculateDmg() {
-        return /*(mainHand.getStr()+str+mainHand.getLevel())*2+*/dex;
+        return (mainHand.getStr()+str+mainHand.getLevel())*2+dex;
     }
 
     @Override

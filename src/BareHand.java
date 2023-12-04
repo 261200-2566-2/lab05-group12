@@ -18,9 +18,4 @@ public class BareHand extends Weapon implements WeaponI{
     public int getStr(){
         return 0;
     }
-    @Override
-    public int getStats() {
-        return 0;
-    }
-
 }

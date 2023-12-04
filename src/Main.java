@@ -4,6 +4,13 @@ public class Main {
     public static void main(String[] args) {
         // Press Alt+Enter with your caret at the highlighted text to see how
         // IntelliJ IDEA suggests fixing it.
-        System.out.print("Hello and welcome!");
+        Character a1 = new Knight("Mark");
+        a1.statsDisplay();
+        a1 = new Knight("Mark",4);
+        a1.statsDisplay();
+        a1.upLevel();
+        a1.statsDisplay();
+        a1.upLevel(5);
+        a1.statsDisplay();
     }
 }

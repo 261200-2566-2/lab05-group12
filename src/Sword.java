@@ -1,0 +1,30 @@
+public class Sword extends Melee implements MeleeI{
+
+    public Sword(){}
+    @Override
+    public String getName() {
+        return null;
+    }
+
+    @Override
+    public void statsDisplay() {
+
+    }
+
+    @Override
+    public int getLevel() {
+        return 0;
+    }
+
+    @Override
+    public void upLevel() {
+
+    }
+    public int getStr(){
+        return 1;
+    }
+    @Override
+    public int getStats() {
+        return 0;
+    }
+}

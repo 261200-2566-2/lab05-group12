@@ -8,7 +8,4 @@ public class Melee extends Weapon implements  MeleeI{
         dex = (int)(0.5*level);
         def = (int)(0.6*level+4);
     }
-    public int getStr(){return str;}
-    public int getDex(){return dex;}
-    public int getDef() {return def;}
 }

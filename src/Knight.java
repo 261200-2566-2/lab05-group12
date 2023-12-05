@@ -16,9 +16,7 @@ public class Knight extends MeleeCharacter implements MeleeCharacterI{
     protected int calculateDmg() {
         return (mainHand.getStr()+str+mainHand.getLevel())*2+dex;
     }
-    protected int calculateDef(){
-        return (int)(0.5*(mainHand.getDef()+def+ mainHand.getLevel()));
-    }
+    protected int calculateDef() {return (int)(0.5*(mainHand.getDef()+def+ mainHand.getLevel()));}
     @Override
     public void stance() {
 

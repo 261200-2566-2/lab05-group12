@@ -16,6 +16,7 @@ public abstract class RangeCharacter extends Character{
         System.out.println("Defense \t: "+def+" \t+ "+mainHand.getDef()+"\t; "+(def+ mainHand.getDef())+"\n");
     }
     public void attack(Character target){
+        System.out.println("\nRange attack()");
         if(mainHand.getAmmo()>0) {
             System.out.println();
             System.out.println(name + " Shoot " + target.getName() + " with " + mainHand.getNameLvl() + "\nInflict Damage " + calculateDmg() + " units");

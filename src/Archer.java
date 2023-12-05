@@ -34,13 +34,14 @@ public class Archer extends RangeCharacter implements RangeCharacterI{
 
     @Override
     public void statsDisplay() {
+        System.out.println("\nStats Display");
         System.out.println("Name : "+name+"\nClass : Archer lvl."+level);
         baseStatsDisplay();
     }
 
     @Override
     public void mainHandStats() {
-        System.out.println();
+        System.out.println("\nPerform mainHandStats()");
         mainHand.statsDisplay(mainHandType);
         System.out.println("Ammo\t: "+mainHand.getAmmo()+"/"+mainHand.getMaxAmmo());
     }

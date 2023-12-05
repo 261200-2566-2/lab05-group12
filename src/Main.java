@@ -7,17 +7,15 @@ public class Main {
         Knight a1 = new Knight("Marl",5, rustySword);
         Knight a2 = new Knight("Park",1, rustySword);
         Archer b1 = new Archer("Kim",2,suckBow);
-//        a1.mainHandStats();
-//        a1.attack(a2);
-//        a2.statsDisplay();
-//        b1.mainHandStats();
-//        b1.statsDisplay();
-//        b1.attack(a1);
-//        b1.attack(a1);
-//        b1.reload();
-////        b1.attack(a1);
-//        b1.attack(a2);
-//        b1.attack(a2);
-//        b1.attack(a2);
+        a1.mainHandStats();
+        a1.attack(a2);
+        a2.statsDisplay();
+        b1.mainHandStats();
+        b1.statsDisplay();
+        b1.attack(a1);
+        b1.attack(a1);
+        b1.upLevel(10);
+        b1.upLevel();
+        b1.statsDisplay();
     }
 }

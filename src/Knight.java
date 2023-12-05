@@ -36,12 +36,14 @@ public class Knight extends MeleeCharacter implements MeleeCharacterI{
     }
     @Override
     public void statsDisplay(){
+        System.out.println("\nStats Display");
         System.out.println("Name : "+name+"\nClass : Knight lvl."+level);
         baseStatsDisplay();
     }
 
     @Override
     public void mainHandStats() {
+        System.out.println("\nPerform mainHandStats()");
         mainHand.statsDisplay(mainHandType);
     }
 }

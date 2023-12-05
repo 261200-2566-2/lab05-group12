@@ -19,6 +19,7 @@ public abstract class MeleeCharacter extends Character{
     }
 
     public void attack(Character target){
+        System.out.println("\nMelee attack()");
         System.out.println(name+" Attack "+target.getName()+" with "+ mainHand.getNameLvl()+"\nInflict Damage "+calculateDmg()+" units");
         target.beingAttack(calculateDmg());
     }

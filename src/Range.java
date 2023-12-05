@@ -15,8 +15,14 @@ public class Range extends Weapon implements RangeI{
         ammo--;
         System.out.println("Current ammo : "+ammo+"/"+maxAmmo);
     }
-    public void reload() {
+    public void reloadRange() {
+        System.out.println(ammo+" max "+maxAmmo);
         ammo = maxAmmo;
+        System.out.println("Reloaded");
+    }
+
+    public void setAmmo(int ammo) {
+        this.ammo = ammo;
     }
 
     public int getAmmo() {return ammo;}

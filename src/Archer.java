@@ -45,8 +45,8 @@ public class Archer extends RangeCharacter implements RangeCharacterI{
         System.out.println("Ammo\t: "+mainHand.getAmmo()+"/"+mainHand.getMaxAmmo());
     }
 
-    @Override
     public void reload() {
-        mainHand.reload();
+        System.out.println(this.mainHand.getAmmo());
+        mainHand.setAmmo(mainHand.maxAmmo);
     }
 }

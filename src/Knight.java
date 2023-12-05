@@ -16,7 +16,9 @@ public class Knight extends MeleeCharacter implements MeleeCharacterI{
     protected int calculateDmg() {
         return (mainHand.getStr()+str+mainHand.getLevel())*2+dex;
     }
-
+    protected int calculateDef(){
+        return (int)(0.5*(mainHand.getDef()+def+ mainHand.getLevel()));
+    }
     @Override
     public void stance() {
 
@@ -38,9 +40,6 @@ public class Knight extends MeleeCharacter implements MeleeCharacterI{
     public void statsDisplay(){
         System.out.println("Name : "+name+"\nClass : Knight lvl."+level);
         baseStatsDisplay();
-        System.out.println("Strength\t: "+str);
-        System.out.println("Agility \t: "+ dex);
-        System.out.println("Defense \t: "+def+"\n");
     }
 
     @Override

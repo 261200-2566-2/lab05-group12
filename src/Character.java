@@ -14,13 +14,24 @@ public abstract class Character {
     }
     //getter
     //methods
-    public void attack(Character target){
-        System.out.println("Damage "+calculateDmg());
-        target.beingAttack(calculateDmg());
-    }
+    public String getName() {return name;}
     protected abstract int calculateDmg();
+    protected abstract int calculateDef();
     protected void beingAttack(int dmg){
-        health-=dmg;//to be fixed
+        int calDef = calculateDef();
+        int rawDmg = dmg-calDef;
+        System.out.println(name + " take that with "+calDef+" defense units");
+        if(rawDmg>0)
+            if(health<rawDmg)   health=0;
+            else    health-=rawDmg;
+        else rawDmg=0;
+        System.out.println(name + " got damaged "+rawDmg+" units");
+        System.out.println(name+"'s Health : "+health+"/"+maxHp);
+        if(health<=0){
+            alive = false;
+            System.out.println(name + " has been slain. . .");
+        }
+        System.out.println();
     }
     public abstract void updateStats();
     protected void baseStatsUpdate(){
@@ -34,8 +45,10 @@ public abstract class Character {
     public abstract void statsDisplay();
     protected void baseStatsDisplay(){
         System.out.println("Health : "+health+"/"+maxHp+"\t Mana : "+mana+"/"+maxMp);
-        System.out.println("Speed : "+speed);
+        System.out.println("Speed : "+speed+"\tStatus : "+(alive?"ALIVE":"DEAD"));
+        statsWithWeapon();
     }
+    protected abstract void statsWithWeapon();
     public void upLevel(int lvl){
         if(lvl==1) System.out.println(name+" level up");
         else System.out.println(name+" level up "+lvl+" levels");

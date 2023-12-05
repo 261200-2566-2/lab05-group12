@@ -25,4 +25,7 @@ public abstract class Weapon extends Equipment{
         upLevel(1);
     }
     public abstract void updateStats();
+    public String getNameLvl(){
+        return (getName()+" lvl."+getLevel());
+    }
 }

@@ -1,7 +1,6 @@
-public abstract class Character {
+public abstract class Character extends BaseStats{
     //fields
     protected String name;
-    protected int health,maxHp,mana,maxMp,speed,maxSp,str,def, dex,level;
     protected boolean alive;
     protected Ring ringSlot1,ringSlot2;
     protected Glove glove;
@@ -22,39 +21,25 @@ public abstract class Character {
         int rawDmg = dmg-calDef;
         System.out.println(name + " take that with "+calDef+" defense units");
         if(rawDmg>0)
-            if(health<rawDmg)   health=0;
-            else    health-=rawDmg;
+            if(hp<rawDmg)   hp=0;
+            else    hp-=rawDmg;
         else rawDmg=0;
         System.out.println(name + " got damaged "+rawDmg+" units");
-        System.out.println(name+"'s Health : "+health+"/"+maxHp);
-        if(health<=0){
+        System.out.println(name+"'s Health : "+hp+"/"+maxHp);
+        if(hp<=0){
             alive = false;
             System.out.println(name + " has been slain. . .");
         }
         System.out.println();
     }
-    public abstract void updateStats();
-    protected void baseStatsUpdate(){
-        maxHp = 100+(10*level);
-        maxMp = 50+(10*level);
-        maxSp = 10+level;
-        health = maxHp;
-        mana = maxMp;
-        speed = maxSp;
+    protected void statsDisplays(String className,String mainHandName,String mainHandClass,int mHlvl,
+                             int mHstr,int mHdef, int mHdex){
+        System.out.println("Name\t: "+name+" "+className+" level."+level);
+        System.out.println("Status\t: "+(alive?"ALIVE":"DEAD"));
+        System.out.println("Weapon\t: "+mainHandName+" "+mainHandClass+" level."+mHlvl);
+        System.out.println("STATS\tBASE\tWEAPON\tSUM");
+        System.out.println("Strength\t: "+baseStr+"\t"+mHstr+"\t"+baseStr+mHstr);
+        System.out.println("Defense \t: "+baseDef+"\t"+mHdef+"\t"+baseDef+mHdef);
+        System.out.println("Dexterity\t: "+baseDex+"\t"+mHdex+"\t"+baseDex+mHdex);
     }
-    public abstract void statsDisplay();
-    protected void baseStatsDisplay(){
-        System.out.println("Health : "+health+"/"+maxHp+"\t Mana : "+mana+"/"+maxMp);
-        System.out.println("Speed : "+speed+"\tStatus : "+(alive?"ALIVE":"DEAD"));
-        statsWithWeapon();
-    }
-    protected abstract void statsWithWeapon();
-    public void upLevel(int lvl){
-        if(lvl==1) System.out.println(name+" level up");
-        else System.out.println(name+" level up "+lvl+" levels");
-        level+=lvl;
-        updateStats();
-    }
-    public void upLevel(){upLevel(1);}
-    public abstract void mainHandStats();
 }

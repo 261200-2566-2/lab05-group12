@@ -6,7 +6,7 @@ public abstract class RangeCharacter extends Character{
     }
     public RangeCharacter(String name,int level,BareHand mainHand){
         super(name, level);
-        this.mainHand = new Range("Bare Hand",0,0);
+        this.mainHand = new Range("Bare Hand",0);
     }
     @Override
     protected void statsWithWeapon() {
@@ -17,10 +17,10 @@ public abstract class RangeCharacter extends Character{
     }
     public void attack(Character target){
         System.out.println("\nRange attack()");
-        if(mainHand.getAmmo()>0) {
+        if(2>0) {
             System.out.println();
             System.out.println(name + " Shoot " + target.getName() + " with " + mainHand.getNameLvl() + "\nInflict Damage " + calculateDmg() + " units");
-            mainHand.shoot();
+            //mainHand.shoot();
             target.beingAttack(calculateDmg());
         }else System.out.println("Out of ammo");
 
